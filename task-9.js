@@ -1,38 +1,47 @@
-// Є o6'єкт, у якому зберігаються обрані товари у кошику.
-// Напишіть код для визначення загальної суми замовлення і збережіть його результат у змінній totaLCost.
-// Якщо об'єкт cart порожній, то результат має бути 0.
+// Напиши клас Client який створює об'єкт з властивостями login, email.
+// Оголоси приватні властивості #login, #email, доступ до яких зроби через геттер та сеттер login email.
 
-const cart = {
-    apple: 50,
-    banana: 30,
-    orange: 40,
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
 };
 
+console.log(Client);
 
 
-// version 1
-console.log(cart);
 
-let totaLCost = 0;
+const client = new Client('fayna_divka', 'faynadivka@i.ua');
 
-for (const value of Object.values(cart)) {
-    totaLCost += value;
-}
+console.log(client);
 
-console.log(totaLCost);
+console.log(client.login);
+console.log(client.email);
 
+client.login = 'Koliesnikova_Kat';
+client.email = 'koliesnikova.kateryna@gmail.com';
 
-// version 2
-function total(obj) {
-    console.log(cart);
+console.log(client.login);
+console.log(client.email);
 
-    let totaLCost = 0;
-
-    for (const value of Object.values(obj)) {
-        totaLCost += value;
-    }
-
-    return totaLCost;
-}
-
-console.log(total(cart));
+console.log(client);

@@ -1,44 +1,15 @@
-// Напишіть функцію checkKeyInObject(), яка приймає 2 параметри obj і key.
-// Функція буде перебирати об'єкт.
-// Якщо об'єкт має такий ключ - поверне true, в іншому випадку - false.
+// Порахуй загальну кількість лайків в категорії Fashion
 
-const user = {
-    name: 'Igor',
-    car: 'Mercedes',
-    carColor: 'black',
-};
+const posts = [
+  { title: "Post l", likes: 20, category: "Tech" },
+  { title: "Post 2", likes: 45, category: "Fashion" },
+  { title: "Post 3", likes: 12, category: "Tech" },
+  { title: "Post 4", likes: 36, category: "Fitness" },
+  { title: "Post 5", likes: 15, category: "Fashion" },
+  { title: "Post 6", likes: 50, category: "Tech" },
+];
 
-const book = {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    genre: "Southern Gothic",
-    yearPublished: 1960,
-    isBestseller: true,
-}
+const total = posts.filter(post => post.category === "Fashion")
+                    .reduce((acc, post) => acc + post.likes, 0);
 
-
-// version 1
-function checkKeyInObject(obj, key) {
-    for (const element in obj) {
-        if (element === key) {
-            return true;
-        }
-    }
-    return false;
-}
-
-console.log(checkKeyInObject(user, 'car'));
-console.log(checkKeyInObject(user, 'age'));
-console.log(checkKeyInObject(book, 'rating'));
-console.log(checkKeyInObject(book, 'title'));
-
-
-// version 2
-function checkKeyInObject(obj, key) {
-    return Object.keys(obj).includes(key);
-}
-
-console.log(checkKeyInObject(user, 'car'));
-console.log(checkKeyInObject(user, 'age'));
-console.log(checkKeyInObject(book, 'rating'));
-console.log(checkKeyInObject(book, 'title'));
+console.log(total);

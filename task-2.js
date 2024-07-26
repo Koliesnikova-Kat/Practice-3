@@ -1,31 +1,12 @@
-// Написати функцію сlearArray(array), котра створить новий масив, в якому не буде значень, які призводяться до false.
+// Напишіть стрілочну функцію, яка буде перевіряти, чи всі студенти у нашому масиві старші 18 років.
 
-const array = [
-    1,
-    0,
-    54,
-    'doc',
-    null,
-    'jpg',
-    undefined,
-    '',
-    'png',
-    'exe',
-    false,
-    'mp4',
-    NaN,
-    'hbs',
+const students = [
+  { name: "Alex", age: 17 },
+  { name: "Stas", age: 18 },
+  { name: "Mike", age: 22 },
+  { name: "Den", age: 20 },
 ];
 
+const adultStudents = students.every(student => student.age > 18);
 
-function clearArray(array) {
-    const newArray = [];
-    for (const part of array) {
-        if (part) {
-        newArray.push(part);
-        }
-    }
-    return newArray;
-}
-
-console.log(clearArray(array));
+console.log(adultStudents);

@@ -1,15 +1,8 @@
-// Напишіть функцію, яка створює масив з вказаною довжиною і заповнює його вказанним значенням.
-// Наприклад, функція fillArray(З, 'а') повертає масив ['а', 'а', 'а'].
+// Напишіть функцію sayHi(), яка приймає в якості параметра масив імен, перебирає масив і додає до кожного ім'я привітання.
+// Функція повертає новий масив ["Ivan привіт!", "Maria привіт!", "Anna привіт!"]
 
+const names = ['Ivan', 'Maria', 'Anna'];
 
-function fillArray(times, value) {
-  let array = [];
-  for (let i = 0; i < times; i++) {
-    array.push(value);
-  }
-  return array;
-}
+const sayHi2 = (names) => names.map(name => `${name} привіт!`);
 
-console.log(fillArray(3, 'a'));
-console.log(fillArray(5, 5));
-console.log(fillArray(2, true));
+console.log(sayHi2(names));
