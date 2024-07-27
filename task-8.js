@@ -1,4 +1,4 @@
-// Напиши клас Rectangle який створює об'єкт з властивостями height, width і методом calculateArea() для підрахунку прлощі прямокутника.
+// Напиши клас Rectangle, який створює об'єкт з властивостями height, width і методом calculateArea() для підрахунку площі прямокутника.
 
 class Rectangle {
   constructor(height, width) {
